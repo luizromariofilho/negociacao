@@ -7,6 +7,7 @@
 	<title>Negociações</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 
 	<!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
 	<link rel="stylesheet" href="css/bootstrap.css">
@@ -21,7 +22,7 @@
 
 	  	<h1 class="text-center">Negociações</h1>
 
-	  	<form class="form">
+	  	<form class="form" onsubmit="negociacaoController.adiciona(event)">
 
 	  		<div class="form-group">
 	  			<label for="data">Data</label>
@@ -38,19 +39,18 @@
 	  			<input id="valor" type="number" class="form-control"  min="0.01" step="0.01" value="0.0" required />
 	  		</div>
 
-	  		<button class="btn btn-primary" type="submit">Incluir</button>
+  			<button class="btn btn-primary" type="submit">Incluir</button>
 	  	</form>
-
-	  	<div class="text-center">
-	  		<button class="btn btn-primary text-center" type="button">
-	  			Importar Negociações
-	  		</button>
-	  		<button class="btn btn-primary text-center" type="button">
-	  			Apagar
-	  		</button>
-	  	</div> 
-	  	<br>
-	  	<br>
+	  	<div class="row">
+		  	<div class="col-md-6 col-sm-12 text-center">
+		  		<button class="btn btn-primary text-center" type="button">
+		  			Importar Negociações
+		  		</button>
+		  		<button class="btn btn-primary text-center" type="button">
+		  			Apagar
+		  		</button>
+		  	</div> 
+	  	</div>
 
 	  	<table class="table table-hover table-bordered">
 	  		<thead>
@@ -70,11 +70,11 @@
 	  	</table>
 
 	  	<!-- <script src="js/script.js"></script> -->
-	  	<script src="js/app/models/Negociacao.js"></script>
-	  	<script>
-	  		var n1 = new Negociacao(new Date(), 6, 700);
-	  		var volume = n1.obtemVolume();
-	  		console.log(volume);
+	  	<script type="text/javascript" src="js/app/models/Negociacao.js"></script>
+	  	<script type="text/javascript" src="js/app/controllers/NegociacaoController.js"></script>
+	  	<script type="text/javascript">
+	  		let	negociacaoController = new NegociacaoController();
+
 	  	</script>
 	  </body>
 	  </html>
